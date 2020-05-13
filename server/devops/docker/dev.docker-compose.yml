@@ -1,0 +1,70 @@
+version: "3.7"
+services:
+  test:
+    image: node:lts-alpine
+    container_name: majestic
+    volumes:
+      - ../../:/usr/src/prj
+    working_dir: /usr/src/prj
+    entrypoint: >
+      /bin/sh -c "\
+        yarn install --ignore-scripts && \
+        yarn global add majestic && \
+        yarn db:migrate && \
+        majestic --noOpen --port 4000\
+      "
+    ports:
+      - "4000-5000:4000-5000"
+    networks:
+      - test-network
+    links:
+      - db
+      - coverage
+      - api
+
+  api:
+    image: node:lts-alpine
+    container_name: api
+    volumes:
+      - ../../:/usr/src/prj
+    working_dir: /usr/src/prj
+    entrypoint: >
+      /bin/sh -c "\
+        yarn install --ignore-scripts && \
+        yarn start\
+      "
+    environment:
+      PORT: 4002
+    ports:
+      - "4002:4002"
+    networks:
+      - test-network
+    links:
+      - db
+
+  coverage:
+    image: node:lts-alpine
+    container_name: coverage
+    volumes:
+      - ../../:/usr/src/prj
+    working_dir: /usr/src/prj
+    entrypoint: yarn serve -l 4001 coverage/lcov-report
+    ports:
+      - "4001:4001"
+
+  db:
+    image: postgres:latest
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test
+    ports:
+      - "5432:5432"
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge

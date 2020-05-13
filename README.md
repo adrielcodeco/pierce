@@ -1,1 +1,3 @@
 # pierce
+
+mkdocs serve

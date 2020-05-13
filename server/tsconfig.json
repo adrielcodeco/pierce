@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "types": ["node", "jest"],
+    "declaration": true,
+    "declarationMap": true,
+    "diagnostics": true,
+    "stripInternal": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "downlevelIteration": true,
+    "noFallthroughCasesInSwitch": true,
+    "removeComments": false,
+    "preserveConstEnums": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "checkJs": false,
+    "allowJs": false,
+    "strict": false,
+    "noEmit": true,
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["es2015"],
+    "baseUrl": ".",
+    "paths": {
+      "#/*": ["src/*"]
+    },
+    "plugins": [{ "transform": "@zerollup/ts-transform-paths" }]
+  },
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "postgres",
+  "host": "db",
+  "port": 5432,
+  "username": "test",
+  "password": "test",
+  "database": "test",
+  "migrations": ["devops/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "devops/migrations"
+  }
+}
