@@ -26,4 +26,4 @@
 
 ## prints
 
-![Docker Stack](/test.png)
+![Docker Stack](./test.png)
