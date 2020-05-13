@@ -53,10 +53,10 @@ All this things, in real projects, need more care and devotion
 
 ## prints
 
-![Docker Stack](/dockerStack.png)
+![Docker Stack](./dockerStack.png)
 
-![Tests Result](/testsResult.png)
+![Tests Result](./testsResult.png)
 
-![Code Coverage](/codeCoverage.png)
+![Code Coverage](./codeCoverage.png)
 
-![Majestic](/majestic.png)
+![Majestic](./majestic.png)
