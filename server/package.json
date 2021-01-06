@@ -58,7 +58,7 @@
     "@types/random": "^2.1.1",
     "@types/swagger-ui-express": "^4.1.2",
     "@zerollup/ts-transform-paths": "^1.7.17",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "axiosist": "^0.9.0",
     "jest": "^26.0.1",
     "jest-cucumber": "^2.0.11",
